@@ -1,4 +1,2 @@
 # hilu
 Just a thing for Hanna
-
-# AND WHATEVER YOU DO DON'T LOOK AT THE COMMIT HISTORY.
