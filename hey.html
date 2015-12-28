@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!--
+Hey, um... Sorry this is a buggy mess. It's supposed to replace the stylesheet when you click your name.
+There's no guarantee it won't replace it with the same stylesheet, though, making it appear like it did nothing.
+Occasionally, it'll also disable all the stylesheets. I dunno why. I suck at code.
+
+Aaaaaaanyway...
+
+I'm sending you on a treasure hunt thing. At first I'll just kinda blatantly tell you what do do, like with the "And whenever you're done, view page source."
+But later, you'll hopefully develop an intuition on how to do these things. If you get really stuck 'cause of my shitty puzzle-making skills, you can ask me for hints. >.>
+Along the way, I'll be sprinkling in ilus 'cause that's what I do.
+
+Anyway, your first hint thing is "there's more source here than just this HTML document"
+-->
+
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" title="main" href="pink.css" />
+    <link rel="alternate stylesheet" type="text/css" title="blue" href="blue.css" />
+    <link rel="alternate stylesheet" type="text/css" title="yellow" href="yellow.css" />
+    <link rel="alternate stylesheet" type="text/css" title="green" href="green.css" />
+    <link rel="alternate stylesheet" type="text/css" title="purple" href="purple.css" />
+    <title>Hanna</title>
+    <script>
+
+      var colors = ['blue','yellow','green','purple'];
+
+      function changeStyle() {
+      var lnks = document.getElementsByTagName('link');
+      for (var i = lnks.length - 1; i >= 0; i--) {
+      if (lnks[i].getAttribute('rel').indexOf('style')> -1 && lnks[i].getAttribute('title')) {
+      lnks[i].disabled = true;
+      if (lnks[i].getAttribute('title') == thafuck()) lnks[i].disabled = false;
+    }}}
+
+    function thafuck() { return colors[Math.floor(Math.random() * colors.length)] }
+
+
+</script>
+  </head>
+  <body>
+    <div class="hilussssssm">
+    <h1><span onclick="changeStyle()">Hanna</span></h1>
+    <p>Click the perfect name. Don't say "but there is no perfect name on this page."</p>
+    <p> And yes, clicking it is an admission that it is in fact perfect. 'cause it is.</p>
+    <p><small>And whenever you're done, view page source.</small></p>
+    </div>
+  </body>
+  </html>
